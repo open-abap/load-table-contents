@@ -33,12 +33,17 @@ CLASS ZCL_LOAD_TEST IMPLEMENTATION.
   METHOD load.
 
     DATA lt_files TYPE zif_abapgit_definitions=>ty_files_tt.
+    DATA ls_file LIKE LINE OF lt_files.
     DATA li_config TYPE REF TO zif_abapgit_data_config.
     DATA li_deser TYPE REF TO zif_abapgit_data_deserializer.
     DATA lt_result TYPE zif_abapgit_data_deserializer=>ty_results.
 
 * only run in transpiler
     ASSERT sy-sysid = 'ABC'.
+
+    ls_file-path     = 'todo'.
+    ls_file-filename = 'todo'.
+    ls_file-data     = 'FFAA11'.
 
 * todo, replace with factory call, https://github.com/abapGit/abapGit/pull/5858
     CREATE OBJECT li_config TYPE zcl_abapgit_data_config.
