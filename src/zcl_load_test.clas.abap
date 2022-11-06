@@ -41,9 +41,10 @@ CLASS ZCL_LOAD_TEST IMPLEMENTATION.
 * only run in transpiler
     ASSERT sy-sysid = 'ABC'.
 
-    ls_file-path     = 'todo'.
+    ls_file-path     = zif_abapgit_data_config=>c_default_path.
     ls_file-filename = 'todo'.
     ls_file-data     = 'FFAA11'.
+    APPEND ls_file TO lt_files.
 
 * todo, replace with factory call, https://github.com/abapGit/abapGit/pull/5858
     CREATE OBJECT li_config TYPE zcl_abapgit_data_config.
