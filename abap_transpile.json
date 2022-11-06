@@ -1,0 +1,35 @@
+{
+  "input_folder": "src",
+  "input_filter": [],
+  "libs": [
+    {
+      "url": "https://github.com/open-abap/open-abap-core"
+    },
+    {
+      "url": "https://github.com/abapGit/ajson_mirror"
+    },
+    {
+      "url": "https://github.com/abapGit/abapGit",
+      "files": "/src/data/*.*"
+    },
+    {
+      "url": "https://github.com/abapGit/abapGit",
+      "files": "/src/zif_abapgit_definitions.intf.abap"
+    },
+    {
+      "url": "https://github.com/abapGit/abapGit",
+      "files": "/src/utils/zcl_abapgit_convert.clas.abap"
+    }
+  ],
+  "output_folder": "output",
+  "write_unit_tests": true,
+  "write_source_map": true,
+  "options": {
+    "ignoreSyntaxCheck": false,
+    "addFilenames": true,
+    "unknownTypes": "runtimeError",
+    "extraSetup": "../setup.mjs",
+    "addCommonJS": true,
+    "skip": []
+  }
+}

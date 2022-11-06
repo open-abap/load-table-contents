@@ -1,0 +1,28 @@
+{
+  "name": "load-table-contents",
+  "private": true,
+  "version": "1.0.0",
+  "description": "test",
+  "scripts": {
+    "lint": "abaplint",
+    "transpile": "rm -rf output && abap_transpile",
+    "unit": "npm run transpile && echo RUNNING && node output/index.mjs",
+    "test": "npm run lint && npm run unit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/open-abap/load-table-contents.git"
+  },
+  "author": "Lars",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/open-abap/load-table-contents/issues"
+  },
+  "homepage": "https://github.com/open-abap/load-table-contents#readme",
+  "dependencies": {
+    "@abaplint/cli": "^2.93.74",
+    "@abaplint/runtime": "^2.3.38",
+    "@abaplint/database-sqlite": "^2.3.38",
+    "@abaplint/transpiler-cli": "^2.3.38"
+  }
+}
