@@ -1,15 +1,15 @@
-class ZCL_LOAD_TEST definition
-  public
-  final
-  create public .
+CLASS zcl_load_test DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
 
-public section.
+  PUBLIC SECTION.
 
-  methods LIST
-    returning
-      value(COUNT) type I .
-protected section.
-private section.
+    METHODS list
+      RETURNING
+        VALUE(count) TYPE i .
+  PROTECTED SECTION.
+  PRIVATE SECTION.
 ENDCLASS.
 
 
