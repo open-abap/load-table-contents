@@ -9,4 +9,6 @@ export async function setup(abap, schemas, insert) {
   for (const i of insert) {
     await abap.context.databaseConnections["DEFAULT"].execute(i);
   }
+
+  await abap.Classes["ZCL_LOAD_TEST"].load();
 }

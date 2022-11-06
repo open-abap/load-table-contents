@@ -11,6 +11,10 @@
     {
       "url": "https://github.com/abapGit/abapGit",
       "files": "/src/data/*.*"
+    },
+    {
+      "url": "https://github.com/abapGit/abapGit",
+      "files": "/src/zif_abapgit_definitions.intf.abap"
     }
   ],
   "output_folder": "output",
