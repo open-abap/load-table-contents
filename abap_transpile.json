@@ -18,6 +18,10 @@
     },
     {
       "url": "https://github.com/abapGit/abapGit",
+      "files": "/src/git/zif_abapgit_git_definitions.intf.abap"
+    },
+    {
+      "url": "https://github.com/abapGit/abapGit",
       "files": "/src/utils/zcl_abapgit_convert.clas.abap"
     }
   ],
