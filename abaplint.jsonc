@@ -5,12 +5,12 @@
   "dependencies": [
     {
       "url": "https://github.com/open-abap/open-abap-core",
-      "folder": "deps1",
+      "folder": "/deps1",
       "files": "/src/**/*.*"
     },
     {
       "url": "https://github.com/abapGit/abapGit",
-      "folder": "deps2",
+      "folder": "/deps2",
       "files": "/src/**/*.*"
     }
   ],
