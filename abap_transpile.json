@@ -14,10 +14,6 @@
     },
     {
       "url": "https://github.com/abapGit/abapGit",
-      "files": "/src/zif_abapgit_definitions.intf.abap"
-    },
-    {
-      "url": "https://github.com/abapGit/abapGit",
       "files": "/src/git/zif_abapgit_git_definitions.intf.abap"
     },
     {
