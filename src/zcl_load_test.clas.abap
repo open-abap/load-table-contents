@@ -33,7 +33,7 @@ CLASS zcl_load_test IMPLEMENTATION.
 
   METHOD load.
 
-    DATA lt_files  TYPE zif_abapgit_definitions=>ty_files_tt.
+    DATA lt_files  TYPE zif_abapgit_git_definitions=>ty_files_tt.
     DATA ls_file   LIKE LINE OF lt_files.
     DATA lv_name   TYPE string.
     DATA lv_hex    TYPE xstring.
