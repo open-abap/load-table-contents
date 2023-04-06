@@ -39,11 +39,12 @@ CLASS zcl_load_test IMPLEMENTATION.
     DATA lv_hex    TYPE xstring.
     DATA li_config TYPE REF TO zif_abapgit_data_config.
     DATA li_deser  TYPE REF TO zif_abapgit_data_deserializer.
+    DATA ls_checks TYPE zif_abapgit_definitions=>ty_deserialize_checks.
 
 * only run in transpiler
     ASSERT sy-sysid = 'ABC'.
 
-* todo, refactor to use https://github.com/open-abap/open-abap-fs    
+* todo, refactor to use https://github.com/open-abap/open-abap-fs
     WRITE '@KERNEL const fs = await import("fs");'.
     WRITE '@KERNEL for (const name of fs.readdirSync("./data/")) {'.
     WRITE '@KERNEL lv_name.set(name);'.
@@ -59,9 +60,13 @@ CLASS zcl_load_test IMPLEMENTATION.
     li_config->from_json( lt_files ).
 
     li_deser = zcl_abapgit_data_factory=>get_deserializer( ).
+
     rt_result = li_deser->deserialize(
       ii_config = li_config
       it_files  = lt_files ).
-    li_deser->actualize( rt_result ).
+
+    li_deser->actualize(
+      is_checks = ls_checks
+      it_result = rt_result ).
   ENDMETHOD.
 ENDCLASS.

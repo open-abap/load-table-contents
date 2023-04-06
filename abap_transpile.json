@@ -10,15 +10,13 @@
     },
     {
       "url": "https://github.com/abapGit/abapGit",
-      "files": "/src/data/*.*"
-    },
-    {
-      "url": "https://github.com/abapGit/abapGit",
-      "files": "/src/git/zif_abapgit_git_definitions.intf.abap"
-    },
-    {
-      "url": "https://github.com/abapGit/abapGit",
-      "files": "/src/utils/zcl_abapgit_convert.clas.abap"
+      "files": [
+        "/src/data/*.*",
+        "/src/zif_abapgit_definitions.intf.abap",
+        "/src/cts/zif_abapgit_cts_api.intf.abap",
+        "/src/git/zif_abapgit_git_definitions.intf.abap",
+        "/src/utils/zcl_abapgit_convert.clas.abap"
+      ]
     }
   ],
   "output_folder": "output",
