@@ -1,10 +1,5 @@
-CLASS zcl_load_test DEFINITION
-  PUBLIC
-  FINAL
-  CREATE PUBLIC .
-
+CLASS zcl_load_test DEFINITION PUBLIC FINAL CREATE PUBLIC.
   PUBLIC SECTION.
-
     METHODS list
       RETURNING
         VALUE(count) TYPE i .
@@ -16,20 +11,15 @@ CLASS zcl_load_test DEFINITION
 ENDCLASS.
 
 
-
 CLASS zcl_load_test IMPLEMENTATION.
-
 
   METHOD list.
 
     DATA tab TYPE STANDARD TABLE OF zload WITH DEFAULT KEY.
-
     SELECT * FROM zload INTO TABLE tab.
-
     count = lines( tab ).
 
   ENDMETHOD.
-
 
   METHOD load.
 
@@ -39,11 +29,13 @@ CLASS zcl_load_test IMPLEMENTATION.
     DATA lv_hex    TYPE xstring.
     DATA li_config TYPE REF TO zif_abapgit_data_config.
     DATA li_deser  TYPE REF TO zif_abapgit_data_deserializer.
+    DATA ls_checks TYPE zif_abapgit_definitions=>ty_deserialize_checks.
+    DATA ls_overwrite LIKE LINE OF ls_checks-overwrite.
 
 * only run in transpiler
     ASSERT sy-sysid = 'ABC'.
 
-* todo, refactor to use https://github.com/open-abap/open-abap-fs    
+* todo, refactor to use https://github.com/open-abap/open-abap-fs
     WRITE '@KERNEL const fs = await import("fs");'.
     WRITE '@KERNEL for (const name of fs.readdirSync("./data/")) {'.
     WRITE '@KERNEL lv_name.set(name);'.
@@ -54,14 +46,23 @@ CLASS zcl_load_test IMPLEMENTATION.
     APPEND ls_file TO lt_files.
     WRITE '@KERNEL }'.
 
+    ls_overwrite-obj_type = 'TABU'.
+    ls_overwrite-obj_name = 'ZLOAD'.
+    ls_overwrite-decision = zif_abapgit_definitions=>c_yes.
+    APPEND ls_overwrite TO ls_checks-overwrite.
+
 * todo, replace with factory call, https://github.com/abapGit/abapGit/pull/5858
     CREATE OBJECT li_config TYPE zcl_abapgit_data_config.
     li_config->from_json( lt_files ).
 
     li_deser = zcl_abapgit_data_factory=>get_deserializer( ).
+
     rt_result = li_deser->deserialize(
       ii_config = li_config
       it_files  = lt_files ).
-    li_deser->actualize( rt_result ).
+
+    li_deser->actualize(
+      is_checks = ls_checks
+      it_result = rt_result ).
   ENDMETHOD.
 ENDCLASS.
