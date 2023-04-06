@@ -6,14 +6,13 @@
       "url": "https://github.com/open-abap/open-abap-core"
     },
     {
-      "url": "https://github.com/abapGit/ajson_mirror"
-    },
-    {
       "url": "https://github.com/abapGit/abapGit",
       "files": [
-        "/src/data/*.*",
+        "/deps/*.*",
         "/src/cts/zif_abapgit_cts_api.intf.abap",
-        "/src/exits/zif_abapgit_exit.intf.abap",
+        "/src/data/*.*",
+        "/src/json/*.*",
+        "/src/exits/z*",
         "/src/git/zif_abapgit_git_definitions.intf.abap",
         "/src/zif_abapgit_definitions.intf.abap",
         "/src/utils/zcl_abapgit_convert.clas.abap"

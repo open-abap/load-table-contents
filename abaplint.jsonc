@@ -11,7 +11,7 @@
     {
       "url": "https://github.com/abapGit/abapGit",
       "folder": "/deps2",
-      "files": "/src/**/*.*"
+      "files": "/{src,deps}/**/*.*"
     }
   ],
   "syntax": {

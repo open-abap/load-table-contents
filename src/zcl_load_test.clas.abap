@@ -1,10 +1,5 @@
-CLASS zcl_load_test DEFINITION
-  PUBLIC
-  FINAL
-  CREATE PUBLIC .
-
+CLASS zcl_load_test DEFINITION PUBLIC FINAL CREATE PUBLIC.
   PUBLIC SECTION.
-
     METHODS list
       RETURNING
         VALUE(count) TYPE i .
@@ -16,20 +11,15 @@ CLASS zcl_load_test DEFINITION
 ENDCLASS.
 
 
-
 CLASS zcl_load_test IMPLEMENTATION.
-
 
   METHOD list.
 
     DATA tab TYPE STANDARD TABLE OF zload WITH DEFAULT KEY.
-
     SELECT * FROM zload INTO TABLE tab.
-
     count = lines( tab ).
 
   ENDMETHOD.
-
 
   METHOD load.
 
