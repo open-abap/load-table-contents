@@ -12,9 +12,10 @@
       "url": "https://github.com/abapGit/abapGit",
       "files": [
         "/src/data/*.*",
-        "/src/zif_abapgit_definitions.intf.abap",
         "/src/cts/zif_abapgit_cts_api.intf.abap",
+        "/src/exits/zif_abapgit_exit.intf.abap",
         "/src/git/zif_abapgit_git_definitions.intf.abap",
+        "/src/zif_abapgit_definitions.intf.abap",
         "/src/utils/zcl_abapgit_convert.clas.abap"
       ]
     }

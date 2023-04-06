@@ -40,6 +40,7 @@ CLASS zcl_load_test IMPLEMENTATION.
     DATA li_config TYPE REF TO zif_abapgit_data_config.
     DATA li_deser  TYPE REF TO zif_abapgit_data_deserializer.
     DATA ls_checks TYPE zif_abapgit_definitions=>ty_deserialize_checks.
+    DATA ls_overwrite LIKE LINE OF ls_checks-overwrite.
 
 * only run in transpiler
     ASSERT sy-sysid = 'ABC'.
@@ -54,6 +55,11 @@ CLASS zcl_load_test IMPLEMENTATION.
     ls_file-data     = lv_hex.
     APPEND ls_file TO lt_files.
     WRITE '@KERNEL }'.
+
+    ls_overwrite-obj_type = 'TABU'.
+    ls_overwrite-obj_name = 'ZLOAD'.
+    ls_overwrite-decision = zif_abapgit_definitions=>c_yes.
+    APPEND ls_overwrite TO ls_checks-overwrite.
 
 * todo, replace with factory call, https://github.com/abapGit/abapGit/pull/5858
     CREATE OBJECT li_config TYPE zcl_abapgit_data_config.
