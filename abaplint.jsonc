@@ -21,7 +21,7 @@
   ],
   "syntax": {
     "version": "v702",
-    "errorNamespace": "."
+    "errorNamespace": "^Z.*$"
   },
   "rules": {
     "begin_end_names": true,
