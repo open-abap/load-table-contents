@@ -23,6 +23,10 @@ CLASS zcl_abapgit_user_exit IMPLEMENTATION.
     RETURN. " todo, implement method
   ENDMETHOD.
 
+  METHOD zif_abapgit_exit~enhance_repo_toolbar.
+    RETURN. " todo, implement method
+  ENDMETHOD.
+
   METHOD zif_abapgit_exit~change_proxy_authentication.
     RETURN. " todo, implement method
   ENDMETHOD.
