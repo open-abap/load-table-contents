@@ -23,6 +23,10 @@ CLASS zcl_abapgit_user_exit IMPLEMENTATION.
     RETURN. " todo, implement method
   ENDMETHOD.
 
+  METHOD zif_abapgit_exit~change_max_parallel_processes.
+    RETURN. " todo, implement method
+  ENDMETHOD.
+
   METHOD zif_abapgit_exit~enhance_repo_toolbar.
     RETURN. " todo, implement method
   ENDMETHOD.
@@ -35,6 +39,10 @@ CLASS zcl_abapgit_user_exit IMPLEMENTATION.
     RETURN. " todo, implement method
   ENDMETHOD.
   METHOD zif_abapgit_exit~change_proxy_url.
+    RETURN. " todo, implement method
+  ENDMETHOD.
+
+  METHOD zif_abapgit_exit~change_rfc_server_group.
     RETURN. " todo, implement method
   ENDMETHOD.
 
